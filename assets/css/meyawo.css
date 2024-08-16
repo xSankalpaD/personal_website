@@ -71,8 +71,10 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: white;
+  
 }
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -11036,6 +11038,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* contact section */
+
+
 .list {
   list-style-type: none;
   padding-left: 0;
@@ -11189,15 +11193,17 @@ p {
   visibility: visible;
 }
 
+
 /*/ portfolio wrapper */
 .portfolio-card {
   display: block;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .portfolio-card .portfolio-card-img {
   width: 100%;
+  
 }
 
 .portfolio-card .portfolio-card-overlay {
@@ -11635,6 +11641,10 @@ pre .code {
   -webkit-transition: all, 0.3s;
   transition: all, 0.3s;
   font-family: 'Baloo Paaji', cursive;
+  
+}
+.custom-navbar.scrolled {
+  background-color: #000; /* Color after scroll */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -11648,8 +11658,14 @@ pre .code {
   font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
   text-decoration: none;
   color: #fff;
+  
 }
-
+.custom-navbar .logo .imglogo  {
+  width: 120px;
+  height: auto;
+  
+  
+}
 .custom-navbar .container {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -11672,6 +11688,7 @@ pre .code {
   .custom-navbar .container {
     -webkit-transition: none;
     transition: none;
+    
   }
 }
 
@@ -12100,7 +12117,33 @@ pre .code {
   color: #444;
   margin-bottom: 5px;
   position: relative;
-  display: block;
+  display: inline-block;
+  overflow: hidden; /* Ensures the text is hidden as it's typed out */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  border-right: 2px solid; /* Simulates the blinking cursor */
+  font-size: inherit; /* Inherits the font size from the parent */
+  animation: typing 2s steps(10, end), blink-caret 0.75s step-end infinite;
+
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+  from { 
+      width: 0;
+  }
+  to { 
+      width: 3ch; /* "Hi!" is 3 characters long, so width is set to 3ch */
+  }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink-caret {
+  from, to { 
+      border-color: transparent; 
+  }
+  50% { 
+      border-color: black; 
+  }
 }
 
 .header .header-content .header-title .down {
@@ -12108,6 +12151,17 @@ pre .code {
   margin-bottom: 0;
   position: relative;
   display: block;
+  text-shadow: 0 0 10px #fff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #695aa6, 0 0 30px #695aa6, 0 0 40px #695aa6;
+  }
+  to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #695aa6, 0 0 40px #695aa6, 0 0 50px #695aa6;
+  }
 }
 
 .header .header-content .header-subtitle {
